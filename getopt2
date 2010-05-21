@@ -1,0 +1,19 @@
+! /bin/bash
+# getopt2:
+# Sample script using the function getoptex
+#
+# Type something like "getopt2 -ab -d 10 -e20 --opt1 --opt4=100 text1 text2"
+# to see how it works
+#
+# See getopt.sh for more information
+. getopt.sh
+echo Using getoptex to parse arguments:
+while getoptex "a; b; c; d: e. opt1 opt2 opt3 opt4: opt5." "$@"
+do
+  echo "Option <$OPTOPT> ${OPTARG:+has an arg <$OPTARG>}"
+done
+shift $[OPTIND-1]
+for arg in "$@"
+do
+  echo "Non option argument <$arg>"
+done
