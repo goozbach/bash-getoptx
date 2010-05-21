@@ -5,8 +5,8 @@
 # Type something like "getopt1 -ab -d 10 -e20 text1 text2"
 # on the command line to see how it works
 #
-# See getopt.sh for more information
-. getopt.sh
+# See getoptx.sh for more information
+source getoptx.bash
 echo Using getopt to parse arguments:
 while getopt "abcd:e." "$@"
 do
