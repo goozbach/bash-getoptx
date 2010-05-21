@@ -135,7 +135,12 @@ function getoptex()
   then OPTIND=$[OPTIND+1]; if [ "$1" != "--" ]
   then
     local o
-    o="-${1#-$OPTOFS}"
+    if [[ ${OPTOFS:+-} ]]
+    then
+      o="-${1#-${OPTOFS}}"
+    else
+      o="-${1#-}"
+    fi
     for opt in ${optlist#;}
     do
       OPTOPT="${opt%[;.:]}"
@@ -189,7 +194,7 @@ function getoptex()
           "-$OPTOPT"*)
             if [ $opttype = ";" ]
             then # an option with no argument is in a chain of options
-              OPTOFS="$OPTOFS?" # move to the next option in the chain
+              OPTOFS="${OPTOFS:+-}?" # move to the next option in the chain
               OPTIND=$[OPTIND-1] # the chain still has other options
               return 0
             else

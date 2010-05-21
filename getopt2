@@ -6,6 +6,7 @@
 # to see how it works
 #
 # See getoptx.sh for more information
+source stringent.sh || exit 1
 source getoptx.bash
 echo Using getoptex to parse arguments:
 while getoptex "a; b; c; d: e. opt1 opt2 opt3 opt4: opt5." "$@"
