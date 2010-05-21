@@ -58,8 +58,7 @@
 #
 # Both getopt and getoptex set or test the following variables:
 #
-# OPTERR -- tested for whether error messages must be given for invalid
-options
+# OPTERR -- tested for whether error messages must be given for invalid options
 #
 # OPTOPT -- set to the name of an option parsed,
 #           or to "?" if no more options or error
@@ -82,11 +81,9 @@ options
 #           You might not set variables OPTIND and OPTOFS yourself
 #           unless you want to parse a list of parameters more than once.
 #           Otherwise, you whould unset OPTIND (or set it to 1)
-#           and unset OPTOFS each time you want to parse a new parameters
-list
+#           and unset OPTOFS each time you want to parse a new parameters list
 #
-# Option list format is DIFFERENT from one for getopts or getopt.
-getopts-style
+# Option list format is DIFFERENT from one for getopts or getopt. getopts-style
 # option list can be converted to getoptex-style using a function optlistex
 # (see bellow)
 #
@@ -282,7 +279,7 @@ function getopt()
 # to see how it works
 #
 # See getopt.sh for more information
-. getopt.sh
+#. getopt.sh
 #echo Using getoptex to parse arguments:
 #while getoptex "a; b; c; d: e. opt1 opt2 opt3 opt4: opt5." "$@"
 #do
