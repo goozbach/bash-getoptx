@@ -6,8 +6,9 @@
 # on the command line to see how it works
 #
 # See getoptx.sh for more information
-source stringent.sh || exit 1
-source getoptx.bash
+source ../stringent.sh || exit 1
+source ../getoptx.bash
+
 echo Using getopt to parse arguments:
 while getopt "abcd:e." "$@"
 do
